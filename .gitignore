@@ -1,0 +1,10 @@
+.bundle/*
+!.bundle/.keep
+vendor/*
+vendor/bundle/*
+!vendor/.keep
+!vendor/bundle
+!vendor/bundle/.keep
+.env
+.direnv/*
+.direnv/.keep

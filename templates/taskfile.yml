@@ -1,0 +1,26 @@
+version: '3'
+
+dotenv: ['.env']
+
+vars:
+  USERNAME:
+    sh: whoami
+
+tasks:
+  default:
+    cmds:
+      - task --list-all
+
+  build:
+    cmds:
+      - direnv allow
+
+  gem:release:
+    desc: Release the gem
+    cmds:
+      - bundle exec rake release
+
+  run:
+    desc: Run the gem
+    cmds:
+      - bin/run

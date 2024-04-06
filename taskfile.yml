@@ -1,0 +1,22 @@
+version: '3'
+
+dotenv: ['.env']
+
+vars:
+  USERNAME:
+    sh: whoami
+
+tasks:
+  default:
+    cmds:
+      - task --list-all
+
+  build:
+    cmds:
+      - direnv allow
+
+  gem:build:
+    desc: Build the gem
+    cmds:
+      - chmod +x gem_create.sh
+      - ./gem_create.sh {{.TARGET_DIR}}
